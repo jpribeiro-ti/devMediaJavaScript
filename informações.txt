@@ -1,0 +1,386 @@
+atributo - características
+método - comportamento
+
+dir - listar as pastas
+cd - navegar para uma pasta
+cls - apagar
+node index.js
+
+var nome = "João";
+var idade = 18;
+var estaMatriculado = true;
+
+var aluno = "Joaquim"; // Variável do tipo String
+
+aluno = {  // Variável do tipo Object
+	nome: "João";
+	idade: 20;
+};
+
+Array
+var filhos ["Maria", "Regina", "João"];
+console.log(filhos[0]);
+// Vai imprimir Maria
+
+Contando a quantidade de elementos
+console.log(filhos.length);
+// Vai imprimir 3
+
+
+Por exemplo, para modificar a linguagem "Maria" para "Maria Elisa" no array
+var filhos ["Maria", "Regina", "João"];
+var mudarNome = "Maria Elisa";
+filhos[0] = mudarNome;
+
+
+Quando usar arrays?
+Um exemplo: digamos que um usuário possui dois telefones. Como armazenar esses dados? Uma primeira ideia seria usar duas variáveis:
+
+var telefones = [
+    '(11) 98899 - 8787',
+    '(22) 3455 - 8819',
+    '(91) 95620 - 0000'
+];
+
+
+var valorDoServico = 20.0; // Variável do tipo Número
+
+valorDoServico = [13.99, 34.87, 29.99]; // Variável do tipo Array
+
+var usuário = new Usuário(); // usuário variável e Usuário Classe
+
+
+var valor = 25.99;
+var desconto = 5;
+var precoFinal = valor - desconto;
+
+console.log("Valor final = " + precoFinal);
+
+
+var valor = 4;
+console.log(typeof valor);
+// Vai imprimir 'number'
+
+var sobrenome = "Silva";
+console.log(typeof sobrenome);
+// Vai imprimir 'string'
+
+var ligado = true;
+console.log(typeof ligado);
+// Vai imprimir 'boolean'
+
+
+var preco = null;
+console.log(preco.toFixed(2));
+
+Quando fazemos um cálculo, como no Código 5, e uma das variáveis utilizadas é null, o valor da mesma será convertido para 0.
+
+Por exemplo, se presumirmos o tipo de uma variável, tentando acessar algum método ou atributo dela enquanto o seu valor for null, um erro como o do Código 3 ocorrerá:
+
+var nome = null;
+console.log(nome.length);
+
+TypeError: Cannot read property 'length' of null
+Código 3. Erro gerado por tentar acessar a propriedade length de uma variável null
+Nesse caso o erro é tentar acessar a propriedade length de null, assumindo que nome é uma string.
+
+Quando for esse o caso, o JavaScript dará a variável o valor undefined.
+
+Veja um exemplo no Código 2.
+
+var nome;
+console.log(nome); //vai imprimir undefined
+
+
+Uma variável undefined não é uma string e não possui a propriedade length, o que vai gerar um erro, como vemos no Código 4.
+
+TypeError: Cannot read property 'length' of undefined
+Código 4. Erro gerado por tentar acessar a propriedade length de uma variável undefined
+Uma das formas de resolver esse erro é inicializando a variável (Código 5).
+
+var nome = '';
+
+
+Um outro problema acontece quando você faz uma operação matemática com um valor undefined (Código 6).
+
+var idade;
+
+console.log( idade + 1 );
+Código 6. Manipulando uma variável undefined com operador matemático
+O resultado será NaN (Not a Number), não é um número.
+
+NaN é o resultado de uma operação matemática que falhou.
+Esse erro também pode ser evitado se atribuímos um valor ao criar a variável como vemos no Código 7.
+
+var idade = 0;
+
+
+
+Só pra lembrar, os operadores =, == e === possuem significados diferentes que são:
+
+= significa que uma variável recebe ou é atribuída de um valor.
+== verifica se uma condição é igual a outra, fazendo conversão de tipo para isso.
+=== verifica se uma condição é exatamente igual a outra tanto em tipo quanto em valor.
+==, !=, <, >, <=, >=, ===, !== comparam dois dados e retorna um valor booleano true ou false.
+
+Objeto Literal
+
+var produto = {
+    id: 9,
+    nome: "Cafeteira Elétrica",
+    valor: 99.00
+};
+
+var produto = {
+	id: 9,
+	nome: "Cafeteira Elétrica",
+	valor: 99.00
+};
+
+console.log(produto.id);
+console.log(produto.nome);
+console.log(produto.preco);
+
+
+No Código 3 temos o código utilizado na Figura 2.
+
+var aula = {
+    id: 10,
+    titulo: 'Objetos literais',
+    tecnologia: 'JavaScript'
+};
+
+var usuario_logado = true;
+
+
+console.log(aula.id); // 10
+console.log(aula.titulo); // Objetos literais
+console.log(aula.tecnologia); // JavaScript
+
+console.log(usuario_logado); // true
+
+
+A partir de uma de suas propriedades, validamos se o usuário pode ou não assistir um determinado conteúdo. Para isso utilizamos operadores e uma estrutura condicional.
+
+var usuario = {
+    id: 2,
+    nome: "Rafael Nogueira Lemos",
+    idade: 17
+};
+
+var atendeAClassificacaoEtaria = usuario.idade >= 18
+
+if ( atendeAClassificacaoEtaria === true ) {
+
+    console.log("O usuário ainda pode assistir o conteúdo");
+
+} else {
+
+    console.log("O usuário ainda não pode assistir o conteúdo");
+
+}
+
+
+
+No exemplo a seguir temos um objeto que armazena dados de um aluno de academia. Utilizamos as propriedades referentes a altura e peso do aluno para calcular o seu índice de massa corpórea (IMC). Acessamos essas propriedades do objeto e utilizamos uma estrutura condicional como vemos na Figura 3 e no Código 4.
+
+var aluno_academia = {
+    id: 10,
+    nome: "Gerson Silva Campos",
+    altura: 1.75,
+    peso: 69
+};
+
+var nome_aluno = aluno_academia.nome;
+var peso_aluno = aluno_academia.peso;
+var altura_aluno = aluno_academia.altura;
+
+var imc_aluno = (peso_aluno / (altura_aluno * altura aluno)).toFixed(2);
+
+console.log("O IMC do aluno é de: " + imc_aluno);
+
+if ( imc_aluno < 18.5 ) {
+    console.log("O aluno " + nome_aluno + " está abaixo do peso");
+} else if( imc_aluno >= 18.5 && imc_aluno <= 24.99) {
+    console.log("O aluno " + nome_aluno + " está com o peso normal");
+} else {
+    console.log("O aluno " + nome_aluno + " está acima do peso");
+}
+
+// O IMC do aluno é de: 22.53
+peso normal
+
+
+coleção de objetos
+
+var colecao_disciplinas = [
+    { id: 1, nome: "Português",     carga_horaria: 240 }, // índice 0
+    { id: 2, nome: "Matemática",    carga_horaria: 220 }, // índice 1
+    { id: 3, nome: "História",      carga_horaria: 160 }, // índice 2
+    { id: 4, nome: "Geografia",     carga_horaria: 140 }, // índice 3
+    { id: 5, nome: "Química",       carga_horaria: 160 }, // índice 4
+    { id: 6, nome: "Física",        carga_horaria: 150 }, // índice 5
+    { id: 7, nome: "Inglês",        carga_horaria: 120 }  // índice 6
+];
+
+console.log( colecao_disciplinas[0].id ); // 1
+
+console.log( colecao_disciplinas[4].nome ); // Química
+
+console.log( colecao_disciplinas[6].carga_horaria ); // 120
+
+
+
+Na Figura 3 e Código 4 temos um exemplo com diversos objetos que representam séries, cada uma com nome, horário e sinopse. Agrupamos todos esses objetos dentro de uma coleção e de acordo com o dia da semana, exibimos uma série.
+
+
+var data atual = new Date();
+var dia semana = data atual.getDay();
+
+
+Nos Códigos 1 e 2 você pode conferir toda a codificação utilizada nos slides anteriores.
+
+if (idade >= 16) {
+    console.log('Pode votar');
+}
+else {
+    console.log('Não pode votar');
+}
+Código 1. Exemplo if
+switch (ddd) {
+    case 11:
+        console.log("São Paulo");
+        break;
+    case 21:
+        console.log("Rio de Janeiro")
+        break;
+}
+
+//Código 2. Exemplo de condição curto-circuito
+
+
+let nota = 3;
+let status = 'Reprovado';
+
+nota > 7 && (status = 'Aprovado');
+
+console.log(status);
+
+
+/*
+Código 2. Exemplo de condição curto-circuito
+let nota = 9;
+let status = 'Reprovado';
+
+status = nota > 7 && 'Aprovado';
+
+console.log(status);*/
+
+//Abaixo você pode conferir o código de apresentado no Flow anterior:
+
+let mensagem = '';
+let itemEncontrado = true;
+
+itemEncontrado && (mensagem = "Item encontrado");
+
+console.log(mensagem);
+
+
+let nome = "Eduardo";
+nome.length > 0 && console.log(nome);
+
+
+var senha = 12345;
+let condicao = (senha.length > 5) ? "Senha válida" : "Senha inválida";
+
+
+var produto = Smartphone;
+
+switch(produto)
+{
+    case "Smartphone":
+    case "Celular":
+    case "Telefone":
+        console.log("Produto: Smartphone");
+        break;
+    case "TV":
+        console.log("Produto: TV");
+        break;
+    default:
+        console.log("Produto inválido");
+        break;
+}
+
+
+Os códigos com os arrays do flow são apresentado nos Códigos 1 e 2.
+
+var programadores = [
+    "Leandro",
+    "Marcelo",
+    "Jéssica",
+    "Roberta"
+];
+Código 1. Arrays de programadores
+var produtos = [
+    "Notebook Samsung X40",
+    "Smartphone Xiaomi Redmi 9",
+    "Smart TV LED 50 LG",
+    "Home Theater Philco PHT690"
+];
+
+
+var notas_aluno = [ 9, 8, 7, 9 ];
+Código 2. Arrays de produtos e notas de aluno
+Na Figura 1 e no Código 3 vemos que os arrays servem para agrupar diferentes tipos de dados. Então podemos usar essas estruturas para agrupar textos e valores numéricos.
+
+var funcionario = [
+    'Caio César Martins',   // Nome
+     23,                   // Idade
+    'caio@email.com'      // email
+];
+
+var meses = [
+    "Janeiro",
+    "Fevereiro",
+    "Março",
+    "Abril",
+    "Maio",
+    "Junho",
+    "Julho",
+    "Agosto",
+    "Setembro",
+    "Outubro",
+    "Novembro",
+    "Dezembro"
+];
+
+
+Os códigos utilizados no flow são apresentados no Código 5.
+
+var tecnologias = [ // Array de Tecnologia
+    "JavaScript",
+    "Dart",
+    "React",
+    "Angular"
+];
+
+var numeros_premiados = [ // Array de números premiados
+    10,
+    15,
+    21,
+    22,
+    39,
+    47
+];
+
+Coleções de dados são dados de um mesmo domínio agrupado em uma variável. O Array é um exemplo de Coleção de Dados
+
+var funcionarios = [
+    "Danilo",   // índice 0
+    "Denise",   // índice 1
+    "Marcos",   // índice 2
+    "Roberta",  // índice 3
+    "Thiago"    // índice 4
+];
+
+console.log(funcionarios[3]) // Roberta
