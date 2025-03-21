@@ -1,0 +1,17 @@
+{
+  "name": "190325",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "aprovado.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "190325": "file:",
+    "readline-sync": "^1.4.10"
+  }
+}

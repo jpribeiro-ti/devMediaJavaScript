@@ -1,0 +1,39 @@
+Bom dia! NaN significa "Not-a-Number," e indica que uma operação que deveria resultar em um número falhou. No seu código JavaScript, o problema está na maneira como a função parseInt() está sendo utilizada. A função parseInt() é usada para converter strings em números inteiros, mas, ao usá-la dentro de entradaDados.question(), ela está tentando converter o valor de retorno da função parseInt() numa string, o que resultará sempre em NaN.
+
+Para corrigir o erro, primeiro você deve garantir que a entrada seja capturada como uma string, e somente depois convertê-la em um número inteiro, se necessário. Abaixo está um exemplo de como isso pode ser feito corretamente:
+
+javascript
+Copy
+const readline = require('readline-sync');
+
+let entrada = readline.question("Informe o número de Parcelas: ");
+let qtd_parcelas = parseInt(entrada);
+
+if (isNaN(qtd_parcelas)) {
+    console.log("Por favor, insira um número válido.");
+} else {
+    console.log("Número de Parcelas: " + qtd_parcelas);
+}
+Neste código, readline.question() captura a entrada do usuário como uma string, e então parseInt() converte a string em número, caso seja possível. Adicionalmente, há uma verificação com isNaN() para garantir que o usuário insira um número válido.
+
+eu importo o readline da seguinte maneira, me informe se é um método antigo: import entradaDados from 'readline-sync';
+
+avatar
+O modo como você está importando readline-sync usando import entradaDados from 'readline-sync'; é uma forma moderna de importar módulos e faz parte da sintaxe de módulos ES6. Esse método de importação é geralmente utilizado em conjunto com configurações que permitem o uso de módulos ES6 em ambientes que suportam ou foram configurados para usá-los, como em alguns casos com Babel ou ao usar Node.js na versão que suporte ES Modules.
+
+No entanto, a convenção mais comum com readline-sync, especialmente se não estiver usando um ambiente configurado para ES6, é utilizar a sintaxe require() do Node.js, que seria assim:
+
+javascript
+Copy
+const entradaDados = require('readline-sync');
+Se o seu ambiente estiver configurado para suportar ES6 Modules e seu código estiver funcionando corretamente dessa forma, não há problema em continuar usando o import. Entretanto, muitos tutoriais e exemplos ainda utilizam require() devido à sua ampla compatibilidade com versões do Node.js que não suportam nativamente ES6 Modules. Se você enfrentar problemas usando import, verificar se a configuração do seu ambiente suporta ES6 Modules pode ser um bom passo.
+
+obrigado
+
+avatar
+De nada! Se tiver mais alguma dúvida ou precisar de mais ajuda, fique à vontade para perguntar. Estou aqui para ajudar!
+
+estou vendo que vc não esta guardando as minhas buscas no chat, o que fazer?
+
+avatar
+É isso mesmo! Eu não guardo informações de conversas passadas, pois cada interação é independente. Se você precisar de continuidade nas informações, é melhor anotar ou salvar o que considera importante. Se tiver alguma dúvida específica ou precisar de esclarecimentos, sinta-se à vontade para perguntar novamente!
