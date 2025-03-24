@@ -403,3 +403,107 @@ for ( let contador = 0; contador < 10; contador++ ){
     console.log("O número é: " + contador);
 
 }
+
+
+
+A estrutura de repetição for .. in permite que todas as propriedades de um objeto sejam percorridas. No flow a seguir vemos como é essa estrutura de repetição da linguagem JavaScript.
+
+let aluno = { nome: "Marcos", email: "marcos@email.com, idade: 25};
+
+for (let dados in aluno) {
+	console.log(aluno[dados]);
+}
+
+
+A estrutura de repetição for .. of permite iterar coleções, onde podemos manipular os valores iterados no loop. Veja o funcionamento dessa estrutura no flow a seguir:
+
+let emails_alunos = [
+    "danilo@email.com",
+    "jessica@email.com",
+    "luana@email.com",
+    "gustavo@email.com"
+];
+
+for ( let email of emails_alunos ) {
+
+    console.log("Email: " + email);
+
+}
+
+// Email: danilo@email.com
+// Email: jessica@email.com
+// Email: luana@email.com
+// Email: gustavo@email.com
+Vai iterar todos os e-mails sem a necessidade de um contador
+
+
+let produtos_array = [
+    { id: 1, nome: "mouse", preco: 50 },
+    { id: 2, nome: "teclado", preco: 90 },
+    { id: 3, nome: "monitor", preco: 350 },
+    { id: 4, nome: "nobreak", preco: 600 },
+];
+
+let percentual_desconto = 10;
+
+for ( let produto of produtos_array ) {
+
+    let nome = produto.nome;
+    let preco = produto.preco;
+
+    let valor_desconto = (preco * percentual_desconto) / 100;
+    let novo_preco = preco - valor_desconto;
+
+    console.log("Novo valor do produto " + nome + ": R$" + novo_preco + ",00");
+
+}
+
+
+media for of
+
+let notas_trimestrais = [9, 7, 6, 7];
+
+let total_notas = notas_trimestrais.length;
+let soma_notas = 0;
+
+for ( let nota of notas_trimestrais ) {
+
+    soma_notas = soma_notas + nota;
+
+}
+
+let media = soma_notas / total_notas;
+
+console.log("Média: " + media);
+
+if ( media >= 7 ) {
+
+    console.log("Aprovado");
+
+} else if ( media >= 6 && media < 7 ) {
+
+    console.log("Recuperação");
+
+} else {
+
+    console.log("Reprovado");
+
+}
+
+A estrutura de repetição for .. of é uma ótima solução para percorrer valores de uma coleção de dados
+
+
+Neste curso você vai aprender a manipular strings utilizando os seguintes recursos nativos:
+
+Propriedade:
+
+length
+Métodos:
+
+toLowerCase/toUpperCase
+trim
+padStart/padEnd
+replace
+substring
+indexOf
+split
