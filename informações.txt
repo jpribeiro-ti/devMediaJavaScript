@@ -507,3 +507,60 @@ replace
 substring
 indexOf
 split
+
+
+Métodos Nativos
+.length
+.toUpperCase() Maiúscula || toLowerCase() Minúscula
+.trim() Retirar espaços no início ou fim // Geralmente o método trim() é usado no cadastro e na validação de dados
+.padStar
+.padEnd
+
+
+
+let nome = "   Diego     ";
+
+let resultado = nome.trim();
+
+console.log(resultado); // Diego
+
+padStart // padEnd
+
+
+let label_aluno = "Aluno";
+let valor_aluno = "Edmilson";
+
+let label_grau = "Grau de escolaridade"
+let valor_grau = "Ensino Médio Completo";
+
+console.log(label_aluno.padStart(20, " ") + ": " + valor_aluno);
+
+console.log(label_grau.padStart(20, " ") + ": " + valor_grau);
+
+//                Aluno: Edmilson
+// Grau de escolaridade: Ensino Médio Completo
+Código 1. Código com método padStart()
+let label = "Email: ";
+let email = "contato@email.com";
+
+console.log( label.padEnd(20, ' ') + email );
+
+// Email:              contato@email.com
+
+
+let label_nome = "Nome:";
+let valor_nome = "Jorge Luiz";
+
+let label_profissao = "Profissão:";
+let valor_profissao = "Professor";
+
+let label_endereco = "Endereço:";
+let valor_endereco = "Rua Cruzeiro do Sul";
+
+console.log( label_nome.padEnd(25, '.') + valor_nome );
+console.log( label_profissao.padEnd(25, '.') + valor_profissao );
+console.log( label_endereco.padEnd(25, '.') + valor_endereco );
+
+// Nome:....................Jorge Luiz
+// Profissão:...............Professor
+// Endereço:................Rua Cruzeiro do Sul
